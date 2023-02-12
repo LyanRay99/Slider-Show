@@ -1,0 +1,84 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+section {
+  .show {
+    @include size(600px, 300px);
+    background-color: aquamarine;
+    vertical-align: middle;
+    margin-bottom: 5px;
+
+    img {
+      @include size(100%, 100%);
+      vertical-align: middle;
+    }
+  }
+
+  .slide {
+    @include size(600px, 100px);
+    background: #3494e6; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #ec6ead,
+      #3494e6
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #ec6ead,
+      #3494e6
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: inline-flex;
+
+    .box {
+      @include size(90%, 100px);
+      overflow-x: scroll;
+      overflow-y: hidden;
+      display: inline-flex;
+
+      img {
+        @include size(100px, 90px);
+        margin: 3px 5px 5px 5px;
+        border-radius: 10px;
+      }
+    }
+
+    .fa-solid,
+    .fa-duotone {
+      @include size(5%, auto);
+      font-size: 2em;
+      margin: auto 10px;
+    }
+
+    .fa-solid {
+      margin-right: 0px;
+    }
+  }
+}
+
+body {
+  height: 1000px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+  background-color: greenyellow;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: red;
+  border-radius: 10px;
+}
